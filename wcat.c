@@ -6,7 +6,7 @@
 void print_file(char *filename) {
 	FILE *fp = fopen(filename, "r");
 	if (fp == NULL) {
-		printf("cannot open file\n");
+		printf("wcat: cannot open file\n");
 		exit(1);
 	}
 
