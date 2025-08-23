@@ -3,8 +3,6 @@
 
 #define LINE_LENGTH 100
 
-// TODO figure out files
-
 void print_file(char *filename) {
 	FILE *fp = fopen(filename, "r");
 	if (fp == NULL) {
@@ -13,14 +11,9 @@ void print_file(char *filename) {
 	}
 
 	char buffer[LINE_LENGTH];
-	while (1) {
-		char *result = fgets(buffer, LINE_LENGTH, fp);
-		if (result == NULL) {
-			break;
-		}
+	while (fgets(buffer, LINE_LENGTH, fp)) {
 		printf("%s", buffer);
 	}
-
 	fclose(fp);
 }
 
@@ -33,5 +26,5 @@ int main(int argc, char *argv[]) {
 		print_file(argv[i]);
 	}
 
-	return(0);
+	exit(0);
 }
