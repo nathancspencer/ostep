@@ -39,7 +39,7 @@ void print_file(char *searchterm, char *filename) {
 	}
 
 	ssize_t line_length;
-        while((line_length = getline(&buffer, &bufsize, fp)) > 0) {
+	while((line_length = getline(&buffer, &bufsize, fp)) > 0) {
 		if (is_contained(searchterm, buffer)) {
 			printf("%s", buffer);
 		}
@@ -58,7 +58,7 @@ void print_stdin(char *searchterm) {
 	}
 
 	ssize_t line_length;
-        while((line_length = getline(&buffer, &bufsize, stdin)) > 0) {
+	while((line_length = getline(&buffer, &bufsize, stdin)) > 0) {
 		if (is_contained(searchterm, buffer)) {
 			printf("%s", buffer);
 		}
